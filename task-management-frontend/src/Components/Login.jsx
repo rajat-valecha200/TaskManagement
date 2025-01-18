@@ -39,7 +39,7 @@ const Login = () => {
         <img
           src={logo}
           alt="Collaborative Task Management System"
-          className="w-16 h-auto"
+          className="w-14 h-auto"
         />
         <h1 className="text-xl md:text-2xl font-bold ml-2 text-blue-600">
           Collaborative Task
@@ -82,12 +82,12 @@ const Login = () => {
           {error && <p className="text-red-600 mb-4 text-xs">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition duration-200"
+            className="w-full bg-blue-600 text-white font-semibold py-2 rounded-[20px] hover:bg-blue-700 transition duration-200"
           >
             Log In
           </button>
         </form>
-        <div className="mt-4 text-center">
+        <div className="w-full bg-white text-gray-700 font-semibold py-[6px] rounded-[20px] border border-gray-400 hover:bg-gray-100 transition duration-200 text-center mt-4">
           New user?{" "}
           <a href="#" className="text-blue-600 hover:underline">
             Register now
