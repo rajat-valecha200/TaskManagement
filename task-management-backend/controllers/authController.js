@@ -5,21 +5,21 @@ const User = require("../models/User");
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-    return res.status(400).json({ error: "All details are required." });
+    return res.status(400).json({ message: "All details are required." });
   }
   try {
     const user = new User({ name, email, password });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.status(400).json({ error: "Email or password is missing." });
+    return res.status(400).json({ message: "Email or password is missing." });
   }
   try {
     const user = await User.findOne({ email });
@@ -31,6 +31,6 @@ exports.login = async (req, res) => {
     });
     res.status(200).json({ token });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
